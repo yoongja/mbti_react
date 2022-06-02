@@ -1,0 +1,12 @@
+.layout {
+    background-color: blue;
+}
+
+.unitMbti {
+    background-color: rgb(255, 255, 255);
+    margin:auto;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    border-color:black;
+    vertical-align: middle;
+}
