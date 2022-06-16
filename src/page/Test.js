@@ -1,0 +1,102 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Data } from '../data/Data';
+
+function Test() {
+    
+  const [idx,setIdx] = useState(0); //문제질문 idx 넘겨주는 용도
+  const endPoint = 12; //질문의 갯수
+  const navigate = useNavigate();
+  const [e,setE] = useState(0);
+  const [i,setI] = useState(0);
+  const [n,setN] = useState(0);
+  const [s,setS] = useState(0);
+  const [f,setF] = useState(0);
+  const [t,setT] = useState(0);
+  const [j,setJ] = useState(0);
+  const [p,setP] = useState(0);
+  let mbti = ""; //mbti 결과를 도출할 변수 
+
+
+  const Button = ({answer , score}) => {
+    //버튼을 클릭했을때 실행되는 함수
+
+    const goNext = () => {
+      console.log({answer});
+      console.log(idx)
+      if(endPoint !== idx + 1){
+        setIdx(idx+1);
+      }
+      else{ 
+        //mbti도출
+        e>i ? mbti+= 'e' : mbti+= 'i';
+        s>n ? mbti+= 's' : mbti+= 'n';
+        f>t ? mbti+= 'f' : mbti+= 't';
+        j>p ? mbti+= 'j' : mbti+= 'p';
+        console.log("mbti는?",mbti)
+        //결과 페이지 이동
+        navigate("/result");
+      }
+  }
+
+    const sumScore = () => {
+      console.log({score});
+      console.log(s);
+      switch(score){
+        case 'E':
+          setE(e+1);
+          break;
+        case 'I':
+          setI(i+1);
+          break;
+        case 'N':
+          setN(n+1);
+          break;
+        case 'S':
+          setS(s+1);
+          break;
+        case 'T':
+          setT(t+1);
+          break;
+        case 'F':
+          setF(f+1);
+          break;
+        case 'J':
+          setJ(j+1);
+          break;
+        case 'P':
+          setP(p+1);
+          break;   
+      }
+    }
+
+    return(
+      <>
+        <button onClick={()=>{
+          goNext()
+          sumScore()
+          }
+        }>
+        {answer}
+        </button>
+      </>
+    );
+  }
+
+  return( 
+      <div>
+          <p>{Data[idx].q}</p>
+          <Button answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
+          <Button answer={Data[idx].a[1].answer} score={Data[idx].a[1].type} />
+          {/*<button onClick={() => goNext(score = Data[idx].a[0].type)}>
+              {Data[idx].a[0].answer}
+          </button>
+          <button onClick={() => goNext(Data[idx].a[1].type)}>
+              {Data[idx].a[1].answer}
+          </button>*/}
+      </div>
+  );
+};
+
+
+export default Test

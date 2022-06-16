@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from './Footer';
-import Test from "./Test";
-import Home from "./Home";
-import Result from "./Result";
+import Test from "./page/Test";
+import Home from "./page/Home";
+import Result from "./page/Result";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
