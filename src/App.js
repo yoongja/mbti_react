@@ -1,7 +1,8 @@
 import React from "react";
 import Footer from './Footer';
-import Data from './Data';
+import Test from "./Test";
 import Home from "./Home";
+import Result from "./Result";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -12,9 +13,11 @@ function App() {
     <Router>
       <Routes>
         <Route path ="/" element={<Home />} />
-        <Route path="/test" element={<Data />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </Router>
+    
     <Footer />
     </>
   );
