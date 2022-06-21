@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Data } from '../data/Data';
+import { Data } from '../data/questiondata';
 
 function Test() {
     
@@ -29,13 +29,18 @@ function Test() {
       }
       else{ 
         //mbti도출
-        e>i ? mbti+= 'e' : mbti+= 'i';
-        s>n ? mbti+= 's' : mbti+= 'n';
-        f>t ? mbti+= 'f' : mbti+= 't';
-        j>p ? mbti+= 'j' : mbti+= 'p';
+        e>i ? mbti+= 'E' : mbti+= 'I';
+        s>n ? mbti+= 'S' : mbti+= 'N';
+        f>t ? mbti+= 'F' : mbti+= 'T';
+        j>p ? mbti+= 'J' : mbti+= 'P';
         console.log("mbti는?",mbti)
         //결과 페이지 이동
-        navigate("/result");
+        const title = mbti;
+        navigate('/result',{
+          state : {
+            mbti:title,
+          },
+        });
       }
   }
 
