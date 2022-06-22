@@ -19,13 +19,13 @@ function Home() {
 }
 
 const Wrapper = styled.div`
-	background-color: #F7E40F;
+	background-color: #F5D042;
 	height: 100vh;//전체다
 	width : 100%;
     display:flex;
     justify-content:center;//밑에 감싸준 요소 좌우 가운데
     align-items:center;//상하 가운데
-`
+`;
 
 const Button = styled.button`
     display:inline-block;
@@ -34,15 +34,15 @@ const Button = styled.button`
     position:relative;//부모 요소와 정렬
     outline: none;
     border: none;//안예뻐서 모두 삭제
-    border-radius: 5px;
-    color: black; //폰트컬러
+    border-radius: 100px;
+    color: #F5D042; //폰트컬러
     font-weight: bold;
     cursor: pointer;//위에 올리면 마우스 포인터 모양
     height: 10rem;
     width: 50rem;
     font-size: 2rem;
-    background-color:white;
+    background-color:#0A174E;
     font-family:ongle;
-`
+`;
 
 export default Home;

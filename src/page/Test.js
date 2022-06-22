@@ -2,10 +2,26 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Data } from '../data/questiondata';
 import styled from 'styled-components';
+import './Test.css'
 
+const Wrapper = styled.div`
+background-color: #F5D042;
+height: 100vh;//전체다
+width : 100%;
+display:flex;
+justify-content:center;//밑에 감싸준 요소 좌우 가운데
+align-items:center;
+flex-direction:column;
+`;
+const Qbox = styled.div`
+  font-size:2rem;
+  font-family:ongle;
+  color:#0A174E;
+  font-weight:bold;
+  margin-bottom:70px;
+`;
 
 function Test() {
-    
   const [idx,setIdx] = useState(0); //문제질문 idx 넘겨주는 용도
   const endPoint = 12; //질문의 갯수
   const navigate = useNavigate();
@@ -79,7 +95,8 @@ function Test() {
 
     return(
       <>
-        <button onClick={()=>{
+        <button className="button" 
+        onClick={()=>{
           goNext()
           sumScore()
           }
@@ -92,35 +109,13 @@ function Test() {
 
   return( 
     <Wrapper>
-      <div>
           <Qbox>Q. {Data[idx].q}</Qbox>
-          <ButtonStyle answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
+          <Button answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
           <Button answer={Data[idx].a[1].answer} score={Data[idx].a[1].type} />
-
-
-          {/*<button onClick={() => goNext(score = Data[idx].a[0].type)}>
-              {Data[idx].a[0].answer}
-          </button>
-          <button onClick={() => goNext(Data[idx].a[1].type)}>
-              {Data[idx].a[1].answer}
-          </button>*/}
-      </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
-	background-color: #F7E40F;
-	height: 100vh;//전체다
-	width : 100%;
-    display:flex;
-    justify-content:center;//밑에 감싸준 요소 좌우 가운데
-`;
-const Qbox = styled.p`
-  margin-top:100px;
-  font-size:2rem;
-  font-family:ongle;
-`;
 
 
 export default Test
