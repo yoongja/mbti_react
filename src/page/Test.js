@@ -89,7 +89,9 @@ function Test() {
           break;
         case 'P':
           setP(p+1);
-          break;   
+          break;
+        default:
+          mbti="mbti를 알아보아요"   
       }
     }
 
