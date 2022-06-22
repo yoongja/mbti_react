@@ -1,12 +1,8 @@
-.layout {
-    background-color: blue;
+.App{
+    font-family:"ongle";
 }
 
-.unitMbti {
-    background-color: rgb(255, 255, 255);
-    margin:auto;
-    text-align: center;
-    color:rgb(0, 0, 0);
-    border-color:black;
-    vertical-align: middle;
+@font-face {
+    font-family: "ongle";
+    src: url(/src/asset/font/ongle.ttf);
 }

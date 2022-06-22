@@ -4,7 +4,7 @@ import Test from "./page/Test";
 import Home from "./page/Home";
 import Result from "./page/Result";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import './App.css'
 
 function App() {
 

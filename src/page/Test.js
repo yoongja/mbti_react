@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Data } from '../data/questiondata';
+import styled from 'styled-components';
+
 
 function Test() {
     
@@ -89,10 +91,13 @@ function Test() {
   }
 
   return( 
+    <Wrapper>
       <div>
-          <p>{Data[idx].q}</p>
-          <Button answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
+          <Qbox>Q. {Data[idx].q}</Qbox>
+          <ButtonStyle answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
           <Button answer={Data[idx].a[1].answer} score={Data[idx].a[1].type} />
+
+
           {/*<button onClick={() => goNext(score = Data[idx].a[0].type)}>
               {Data[idx].a[0].answer}
           </button>
@@ -100,8 +105,22 @@ function Test() {
               {Data[idx].a[1].answer}
           </button>*/}
       </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+	background-color: #F7E40F;
+	height: 100vh;//전체다
+	width : 100%;
+    display:flex;
+    justify-content:center;//밑에 감싸준 요소 좌우 가운데
+`;
+const Qbox = styled.p`
+  margin-top:100px;
+  font-size:2rem;
+  font-family:ongle;
+`;
 
 
 export default Test

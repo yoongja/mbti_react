@@ -15,9 +15,9 @@ function Result() {
     return(
         <>
             <h1>결과페이지입니다</h1>
+            <img src={ResultData[idx].img} alt={mbti}></img>
             <h2>{ResultData[idx].title}</h2>
             <p>{ResultData[idx].desc}</p>
-            <img src={ResultData[idx].img} alt={mbti}></img>
             <button onClick={() => navigate('/')}>테스트다시하기</button>
         </>
     );
