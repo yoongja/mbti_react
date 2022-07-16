@@ -91,7 +91,7 @@ function Test() {
           setP(p+1);
           break;
         default:
-          mbti="mbti를 알아보아요"   
+          mbti="mbti를 알아보아요!"   
       }
     }
 
