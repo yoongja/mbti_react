@@ -18,8 +18,14 @@ const Qbox = styled.div`
   font-family:ongle;
   color:#0A174E;
   font-weight:bold;
-  margin-bottom:70px;
+  margin-bottom:20px;
 `;
+const Number = styled.h4`
+  font-size:0.8rem;
+  margin-bottom:100px;
+  font-weight:bold;
+  margin-bottom:50px;
+`
 
 function Test() {
   const [idx,setIdx] = useState(0); //문제질문 idx 넘겨주는 용도
@@ -109,12 +115,13 @@ function Test() {
     );
   }
 
-  return( 
-    <Wrapper>
+  return(
+      <Wrapper>
+          <Number>{idx+1}/12</Number>
           <Qbox>Q. {Data[idx].q}</Qbox>
           <Button answer={Data[idx].a[0].answer} score={Data[idx].a[0].type} />
           <Button answer={Data[idx].a[1].answer} score={Data[idx].a[1].type} />
-    </Wrapper>
+      </Wrapper>
   );
 };
 

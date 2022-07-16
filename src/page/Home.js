@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import question from '../asset/img/question.png'
 
 function Home() {
     return(
         <Wrapper>
             <div>
             <Link to="/Test">
+                <Img src={question} />
                 <Button>
                     MBTI 유형 검사하기
                     {/*<button type="button">MBTI 유형 검사하기</button>*/}
@@ -17,6 +19,14 @@ function Home() {
         
     );
 }
+
+const Img = styled.img`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width : 180px;
+    height : 150px;
+`;
 
 const Wrapper = styled.div`
 	background-color: #F5D042;

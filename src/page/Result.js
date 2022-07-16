@@ -18,9 +18,9 @@ const H1 = styled.h1`
     color:#0A174E;
     font-family:ongle;
     font-weight:bold;
-    font-size:2.5rem;
+    font-size:2.2rem;
 `
-const H2 = styled.h2`
+const H2 = styled.h3`
     color:#0A174E;
 `
 
@@ -28,8 +28,10 @@ const P = styled.p`
     color:#0A174E;
     font-family:ongle;
     font-weight:bold;
-    font-size:1.5rem;
+    font-size:1.3rem;
     white-space: pre-wrap;//개행을 읽음
+    width:70%;
+    line-height:150%;
 `
 
 const Button = styled.button`
@@ -59,7 +61,7 @@ function Result() {
         <>
         <Wrapper>
             <H1>너와 어울리는 창캠이는?</H1>
-            <img src={ResultData[idx].img} width={350} height={350} alt={mbti}></img>
+            <img src={ResultData[idx].img} width={320} height={300} alt={mbti}></img>
             <H2>{ResultData[idx].title}</H2>
             <P>{ResultData[idx].desc}</P>
             <Button onClick={() => navigate('/')}>테스트다시하기</Button>

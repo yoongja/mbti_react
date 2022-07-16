@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from './Footer';
 import Test from "./page/Test";
 import Home from "./page/Home";
 import Result from "./page/Result";
@@ -17,10 +16,8 @@ function App() {
         <Route path="/result" element={<Result />} />
       </Routes>
     </Router>
-    
-    <Footer />
     </>
   );
-  }
+}
 
 export default App;
