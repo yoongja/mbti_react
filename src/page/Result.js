@@ -60,7 +60,7 @@ function Result() {
     return(
         <>
         <Wrapper>
-            <H1>너와 어울리는 창캠이는?</H1>
+            <H1>너와 어울리는 창캐미는?</H1>
             <img src={ResultData[idx].img} width={320} height={300} alt={mbti}></img>
             <H2>{ResultData[idx].title}</H2>
             <P>{ResultData[idx].desc}</P>
